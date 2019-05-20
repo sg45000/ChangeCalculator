@@ -29,7 +29,7 @@ function changeResult(cashSum,price){
   let myMoney = cashSum-price;
   let result = new Map([['change',myMoney]]);
   result = calculator(myMoney,result);
-  // imageUpload(result,changeImage);
+  imageUpload(result,changeImage);
   return result;
 }
 
@@ -44,11 +44,21 @@ function calculator(myMoney,result){
   return result;
 }
 
-// function imageUpload(result,imageId){
-//   for(let unit of CASHTYPE){
-//     result.get(String(unit));
-//     let img = document.createElement('img');
-//     img.src=
-//     imageId.appendChild
-//   }
-// }
+function imageUpload(result,imageId){
+  for(let unit of CASHTYPE){
+    let amount = result.get(String(unit));
+    if(amount>0){
+      var imgHolder = document.createElement('div');
+      for(let i=0;i<amount;i++){
+        imgHolder.className="imgHolder";
+        let img = document.createElement('img');
+        img.src = `images/${unit}yen.png`;
+        img.style.marginTop=`${i*15}px`;
+        img.style.marginLeft=`${i*2}px`;
+        img.className="image";
+        imgHolder.appendChild(img);
+      }
+      imageId.appendChild(imgHolder);
+    }
+  }
+}
