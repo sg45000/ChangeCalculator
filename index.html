@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>ChangeCalculator</title>
+</head>
+<body>
+  <h2>おつり計算機 ~Change Caluculator~</h2>
+  <label for="price">購入価格</label>
+  <input type="text" id="price">
+  <div id="cashInput">
+    <label for="cash">10,000円</label>
+    <input id="10000" name="cash" type="number" min="0"></input>
+    <label for="cash">5,000円</label>
+    <input id="5000" name="cash" type="number" min="0"></input>
+    <label for="cash">1,000円</label>
+    <input id="1000" name="cash" type="number" min="0"></input>
+    <label for="cash">500円</label>
+    <input id="500" name="cash" type="number" min="0"></input>
+    <label for="cash">100円</label>
+    <input id="100" name="cash" type="number" min="0"></input>
+    <label for="cash">50円</label>
+    <input id="50" name="cash" type="number" min="0"></input>
+    <label for="cash">10円</label>
+    <input id="10" name="cash" type="number" min="0"></input>
+    <label for="cash">5円</label>
+    <input id="5" name="cash" type="number" min="0"></input>
+    <label for="cash">1円</label>
+    <input id="1" name="cash" type="number"　min="0"></input>
+  </div>
+  <div id="cashImage" class="image"></div>
+  <label for="cashSum">預り金</label>
+  <input id="cashSum" readonly="true"></input>
+  <button id="calcBtn">計算する</button>
+
+  <label for="change">お釣り</label>
+  <input id="change" readonly="true"></input>
+  <div id="changeImage" class="image"></div>
+
+  <script type="text/javascript" src="./calc.js"></script>
+</body>
+</html>
+
