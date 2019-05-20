@@ -10,26 +10,45 @@
 <body>
   <h2>おつり計算機 ~Change Caluculator~</h2>
   <label for="price">購入価格</label>
-  <input type="text" id="price">
+  <input type="number" id="price">
+  <div>払い出し金額</div>
   <div id="cashInput">
-    <label for="cash">10,000円</label>
-    <input id="10000" name="cash" type="number" min="0"></input>
-    <label for="cash">5,000円</label>
-    <input id="5000" name="cash" type="number" min="0"></input>
-    <label for="cash">1,000円</label>
-    <input id="1000" name="cash" type="number" min="0"></input>
-    <label for="cash">500円</label>
-    <input id="500" name="cash" type="number" min="0"></input>
-    <label for="cash">100円</label>
-    <input id="100" name="cash" type="number" min="0"></input>
-    <label for="cash">50円</label>
-    <input id="50" name="cash" type="number" min="0"></input>
-    <label for="cash">10円</label>
-    <input id="10" name="cash" type="number" min="0"></input>
-    <label for="cash">5円</label>
-    <input id="5" name="cash" type="number" min="0"></input>
-    <label for="cash">1円</label>
-    <input id="1" name="cash" type="number"　min="0"></input>
+    <div class="inputBox">
+      <label for="cash">10,000円</label>
+      <input id="10000" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">5,000円</label>
+      <input id="5000" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">1,000円</label>
+      <input id="1000" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">500円</label>
+      <input id="500" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">100円</label>
+      <input id="100" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">50円</label>
+      <input id="50" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">10円</label>
+      <input id="10" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">5円</label>
+      <input id="5" name="cash" type="number" min="0" max="10"></input>
+    </div>
+    <div class="inputBox">
+      <label for="cash">1円</label>
+      <input id="1" name="cash" type="number"　min="0" max="10"></input>
+    </div>
   </div>
   <div id="cashImage" class="images"></div>
   <label for="cashSum">預り金</label>
@@ -41,6 +60,7 @@
   <div id="changeImage" class="images"></div>
 
   <script type="text/javascript" src="./calc.js"></script>
+  <noscript>Javascriptが利用できません。</noscript>
 </body>
 </html>
 

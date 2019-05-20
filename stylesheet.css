@@ -1,19 +1,40 @@
 #cashSum{
   border: solid 0.5px #555;
 }
+#cashInput{
+  vertical-align:baseline;
+}
+#cashImage{
+  background: #ffc;
+}
+#changeImage{
+  background: #ccf;
+}
 
+.inputBox{
+  display: inline-block;
+  width:25%;
+  margin:4px 10px;
+}
+.inputBox input{
+  vertical-align:middle; 
+  font-family:"ＭＳ Ｐゴシック", arial, helvetica, clean, sans-serif; 
+  position:relative; 
+  width:100%;
+}
 .imgHolder{
   position: relative;
   display: inline-block;
   width:25%;
-  height:100px;
+  height:220px;
 }
 .image{
   position: absolute;
   width:50%;
-  height:100%;
+  height:75%;
 }
 
 .amount{
   text-align: center;
 }
+

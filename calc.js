@@ -9,17 +9,25 @@ let changeImage = document.getElementById('changeImage');
 let change = document.getElementById('change');
 let sum=0;
 const CASHTYPE = [10000,5000,1000,500,100,50,10,5,1];
-cashInput.onchange=function(){
-  sum=0;
-  for(let i=0;i<cash.length;i++){
-    let value = cash.item(i).value-0;
-    let id = cash.item(i).id-0;
-    sum += id*value;
+
+for(let c of cash){
+  c.onchange=function(){
+    sum=0;
+    cashImage.textContent=null;
+    let result = new Map();
+    for(let i=0;i<cash.length;i++){
+      let value = cash.item(i).value;
+      let id = cash.item(i).id;
+      sum += (id-0)*(value-0);
+      result.set(id,value-0)
+    }
+    cashSum.value=sum;
+    imageUpload(result,cashImage);
   }
-  cashSum.value=sum;
 }
 
 calcBtn.addEventListener('click',function(){
+  changeImage.textContent=null;
   let result = changeResult(cashSum.value,price.value);
   change.value = result.get('change');
   console.log(result);
@@ -52,9 +60,20 @@ function imageUpload(result,imageId){
       for(let i=0;i<amount;i++){
         imgHolder.className="imgHolder";
         let img = document.createElement('img');
-        img.src = `images/${unit}yen.png`;
-        img.style.marginTop=`${i*15}px`;
-        img.style.marginLeft=`${i*2}px`;
+        img.src = `images/${unit}yen.png`
+        //お札5枚ごとに左へずらして表示
+        if(i<5){
+          img.style.marginTop=`${i*15}px`;
+          img.style.marginLeft=`${i*2}px`;
+        }else if(i<10){
+          img.style.left="40px";
+          img.style.marginTop=`${(i-5)*15}px`;
+          img.style.marginLeft=`${(i-5)*2}px`;
+        }else{
+          img.style.left="80px";
+          img.style.marginTop=`${(i-10)*15}px`;
+          img.style.marginLeft=`${(i-10)*2}px`;
+        }
         img.className="image";
         imgHolder.appendChild(img);
       }
